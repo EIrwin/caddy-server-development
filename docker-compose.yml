@@ -1,0 +1,10 @@
+mongodb:
+    image: mongo
+    ports:
+        - "27017:27017"
+app:
+    image: eirwin/caddy-server
+    links:
+        - mongodb
+    ports:
+        - "56789:56789"
